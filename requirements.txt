@@ -1,0 +1,7 @@
+numpy<2
+pandas 
+tensorflow 
+# rosbag2_py
+# rosbags
+scikit-learn
+pyproj
