@@ -39,7 +39,7 @@ if __name__ == "__main__":
     TEST_SPLIT = 0.2
     
     my_data_set = MyDataset(AG_PATH)
-    X_train, y_train, X_test, y_test = my_data_set.pipline_data()
+    X_train, y_train, X_test, y_test = my_data_set.pipline_data(WINDOW_SIZE, TEST_SPLIT)
     
     my_model = MyModel(input_shape=(WINDOW_SIZE, 6))
     my_model.train(X_train, y_train)
