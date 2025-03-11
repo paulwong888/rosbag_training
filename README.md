@@ -31,9 +31,9 @@ sudo apt install ros-humble-rosbag2 ros-humble-rosbag2-py
 数据以sqllite3的方式存储, 其中有imu数据和gps数据两种
 
 ### 数据预处理
-imu数据生成频率为200hz, gps数据生成频率为20hz, 意味着imu生成了10条数据, gps才生成1条数据, 两者都含时间戳
-需要将gps数据和imu数据按时间戳对齐
-输入数据为imu数据, 标签为gps数据
++ imu数据生成频率为200hz, gps数据生成频率为20hz, 意味着imu生成了10条数据, gps才生成1条数据, 两者都含时间戳
++ 需要将gps数据和imu数据按时间戳对齐
++ 输入数据为imu数据, 标签为gps数据
 
 ### 基于神经网络的训练
 由于是时间序列数据, 会采用lstm算法处理输入数据, 再加一个全连接层和一个输出层
