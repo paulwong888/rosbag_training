@@ -1,6 +1,6 @@
 numpy<2
 pandas 
-tensorflow 
+tensorflow[and-cuda]
 # rosbag2_py
 # rosbags
 scikit-learn

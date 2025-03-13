@@ -111,10 +111,27 @@ class MyDataset():
         
         return X_train, y_train, X_test, y_test
     
+    def data_augmentation(self, X_train, y_train):
+        # 添加高斯噪声
+        noise_level = 0.02
+        X_noisy = X_train + np.random.normal(0, noise_level, X_train.shape)
+        
+        # 时间序列反转
+        X_flipped = X_train[:, ::-1, :]
+        y_flipped = y_train
+        
+        # 振幅缩放
+        scale_factors = np.random.uniform(0.9, 1.1, X_train.shape[0])
+        X_scaled = X_train * scale_factors[:, np.newaxis, np.newaxis]
+        
+        return np.vstack([X_train, X_noisy, X_flipped, X_scaled]), \
+            np.vstack([y_train, y_train, y_flipped, y_train])
+    
     def pipline_data(self, window_size=100, test_spilt=0.2):
         imu_data, gps_data = self.extract_data_from_rosbag2()
         X, y = self.pre_process_data(imu_data, gps_data, window_size)
         X_train, y_train, X_test, y_test = self.train_test_split(X, y, test_spilt)
+        X_train, y_train = self.data_augmentation(X_train, y_train)
         
         return X_train, y_train, X_test, y_test
 

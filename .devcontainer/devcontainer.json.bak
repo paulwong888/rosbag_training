@@ -2,7 +2,12 @@
     "name": "ROS 2 Development Container",
     "privileged": true,
     "remoteUser": "paul",
-    "image": "ros-tensorflow-gpu",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "USERNAME": "paul"
+        }
+    },
     "workspaceFolder": "/home/ws",
     "workspaceMount": "source=${localWorkspaceFolder},target=/home/paul/paulwong/work/workspaces/rosbag_training,type=bind",
     "customizations": {
