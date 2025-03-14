@@ -1,6 +1,7 @@
 numpy<2
 pandas 
 tensorflow[and-cuda]
+# gpu版本安装文件 https://www.tensorflow.org/install/pip
 # rosbag2_py
 # rosbags
 scikit-learn
