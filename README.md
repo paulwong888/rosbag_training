@@ -1,5 +1,8 @@
 ## 基于rosbag的神经网络训练
 
+### 项目背景
+rosbag数据，里面包含200hz的imu数据，imu为六轴imu，20hz的gps测向数据，gps测向是世界坐标系（NED）。采用神经网络的方式，实现简单定位系统。使用python实现。
+
 ### 安装ROS的Docker版本
 由于ROS针对ubuntu支持得比较好, 推荐基于docker的方式安装, [安装指南](https://docs.ros.org/en/jazzy/How-To-Guides/Setup-ROS-2-with-VSCode-and-Docker-Container.html)
 
